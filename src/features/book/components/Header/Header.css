@@ -4,3 +4,8 @@
     display: flex;
     justify-content: end;
 }
+
+.search-container{
+    width: 600px;
+    margin-left: 200px;
+}

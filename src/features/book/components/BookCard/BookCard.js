@@ -1,9 +1,11 @@
 import "./BookCard.css";
+import {Link} from "react-router-dom";
 
 function BookCard(props) {
   const book = props.data;
 
   return (
+    <Link to={'/book/'+book.title}>
     <div className="card">
       <h5 className="card-title">{book.title}</h5>
       <img src={book.imageLink} className="card-img-top" alt="..."></img>
@@ -24,6 +26,7 @@ function BookCard(props) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

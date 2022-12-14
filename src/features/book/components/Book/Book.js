@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import "./Book.css";
 
 function Book() {
   const [data, setData] = useState({});
   const [book, setBook] = useState({});
-
+  const {bookTitle} = useParams();
+  console.log("book");
   useEffect(() => {
+    console.log("fetch");
     fetch("book.json")
       .then((res) => res.json())
       .then((parsedJson) => {
+        console.log(parsedJson);
         setData(parsedJson);
-        setBook(parsedJson[0]);
       });
   }, []);
 
